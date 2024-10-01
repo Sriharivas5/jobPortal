@@ -5,13 +5,13 @@ const employerController = require("../Controllers/employerController");
 const employeeController = require("../Controllers/employeeController");
 const { authMiddleWare } = require("../Middlewares/authMiddleware");
 
-const  {resendOtp}  = require("../Controllers/otpController");
+const { resendOtp } = require("../Controllers/otpController");
 // authentication routes
 router.post("/register", userControlers.registerUser);
 router.post("/login", userControlers.loginUser);
 
 //employer routes
-router.post("/postJobs", authMiddleWare, employerController.postJob);
+router.post("/postJobs", employerController.postJob);
 router.put("/updateJob/:id", employerController.updateJob);
 router.delete("/deleteJob/:id", employerController.deleteJob);
 
