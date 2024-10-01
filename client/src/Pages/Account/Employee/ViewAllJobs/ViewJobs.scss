@@ -1,0 +1,52 @@
+$lightColor: #cbccf9;
+$second: #e0dff2;
+$third: #cdc1ff;
+$fourth: #a594f9;
+$dark: #3e4684;
+
+$specaillight: #f1f7fe;
+$specialsecond: #dde5f4;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@mixin borderHigh {
+  border-radius: 24px;
+}
+@mixin borderLow {
+  border-radius: 12px;
+}
+
+.viewAllJobs{
+  padding: 40px 0;
+  @include flex();
+  flex-direction: column;
+}
+.jobCard{
+  width: 400px;
+  height: 200px;
+  background-color: $specialsecond;
+  @include borderLow();
+  @include flex();
+  flex-direction: column
+
+}
+.cardsContainer{
+  @include flex();
+  flex-wrap: wrap;
+}
+
+button{
+  background: $dark;
+      color: $specaillight;
+      margin: 0 4px ;
+      padding: 10px 20px;
+      border: none;
+      font-size: 19px;
+      cursor: pointer;
+      @include borderLow();
+}

@@ -1,0 +1,21 @@
+/* colors
+----blue----
+#e5d9f2
+#f5efff
+#cdc1ff
+#a594f9
+#7371fc
+
+----voilet----
+#caa8f5
+#9984d4
+#592e83
+#230c33
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}

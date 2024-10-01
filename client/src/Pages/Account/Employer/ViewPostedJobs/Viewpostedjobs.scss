@@ -1,0 +1,104 @@
+$lightColor: #cbccf9;
+$second: #e0dff2;
+$third: #cdc1ff;
+$fourth: #a594f9;
+$dark: #3e4684;
+
+$specaillight: #f1f7fe;
+$specialsecond: #dde5f4;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@mixin borderHigh {
+  border-radius: 24px;
+}
+@mixin borderLow {
+  border-radius: 12px;
+}
+
+.viewPostedJobs {
+  width: 100%;
+  background: $specaillight;
+  @include flex();
+  flex-direction: column  ;
+
+
+
+  .postedJobs {
+    margin: 30px 0;
+    width: 50%;
+    min-height: 100vh;
+    background-color:$specialsecond;
+    @include flex();
+    @include borderHigh();
+    flex-direction: column;
+    box-shadow: 2px 2px 10px rgb(167, 175, 210);
+
+    h1{
+      color: $dark
+    }
+    .jobs{
+      @include flex();
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+    }
+    input {
+      width:70%;
+      padding: 18px;
+      margin: 4px 0;
+      border: 0.1px solid rgba(212, 212, 212, 0.514);
+      outline: none;
+      @include borderLow();
+      font-size: 20px;
+      transition: all cubic-bezier(0.25, 1.1, 0.25, 5) 0.3s;
+      animation: bounce-scale 0.8s;
+
+      &:focus {
+        scale: 1.1;
+        background: $specialsecond;
+      }
+    }
+    button {
+      background: $dark;
+      color: $specaillight;
+      margin: 0 4px ;
+      padding: 10px 20px;
+      border: none;
+      font-size: 19px;
+      cursor: pointer;
+      @include borderLow();
+      animation: bounce-scale 0.8s;
+    }
+  }
+}
+
+.heroSection {
+  min-height: 100vh;
+  width: 100%;
+  @include flex();
+  img {
+    width: 100%;
+    filter: brightness(40%) saturate(150%);
+  }
+  div {
+    width: 60%;
+    font-size: 80px;
+    color: white;
+    z-index: 9;
+    position: absolute;
+    font-family: monospace;
+    text-align: center;
+    letter-spacing: -4px;
+  }
+  button {
+    padding: 15px 30px;
+    outline: none;
+    @include borderLow();
+  }
+}
