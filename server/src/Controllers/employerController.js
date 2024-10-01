@@ -79,17 +79,13 @@ exports.getJobs = async (req, res) => {
   try {
     // Find and return all job listings from the database
     const jobs = await Job.find();
-
-    if (!jobs) {
-      res.send("no jobs found");
-    }
     // Send the list of jobs as a response
     res.status(200).send(jobs);
   } catch (error) {
     // Handle any errors and send a response with a 500 status code
     res.status(500).json({
       message: "Failed to retrieve jobs",
-      error: error.message,
+      error: error,
     });
   }
 };
