@@ -81,11 +81,11 @@ exports.getJobs = async (req, res) => {
     const jobs = await Job.find();
     // Send the list of jobs as a response
     res.status(200).send(jobs);
-  } catch (error) {
+  } catch (err) {
     // Handle any errors and send a response with a 500 status code
     res.status(500).json({
       message: "Failed to retrieve jobs",
-      error: error,
+      error: err,
     });
   }
 };
